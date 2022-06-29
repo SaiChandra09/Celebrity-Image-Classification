@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Image Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Celebrity Image Classifier</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col card-wrapper" data-player="Tiger_Shroff">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="https://www.theindianwire.com/wp-content/uploads/2019/01/TIGER-SHROFF.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">TIGER SHROFF</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-player="Stylish_Star">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="https://tse4.mm.bing.net/th?id=OIP.udMaRwXUIJK-zQDhZm6HWQHaFj&pid=Api&P=0&w=213&h=160" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Allu Arjun</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-player="Mahesh_Babu">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="https://th.bing.com/th/id/OIP.fBAt8HfSSwOk7sJhiRBAqAHaFr?w=231&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">MAHESH BABU</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col card-wrapper" data-player="Pawan_Kalyan">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="https://th.bing.com/th/id/OIP.V-7kzGl9FO-4DFcR7cpI6wHaEc?w=301&h=187&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">PAWAN KALYAN</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Celebrity</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Tiger Shroff</td>
+                            <td id="score_Tiger_Shroff"></td>
+                        </tr>
+                        <tr>
+                            <td>Allu Arjun</td>
+                            <td id="score_Stylish_Star"></td>
+                        </tr>
+                        <tr>
+                            <td>Mahesh Babu</td>
+                            <td id="score_Mahesh_Babu"></td>
+                        </tr>
+                        <tr>
+                            <td>Pawan Kalyan</td>
+                            <td id="score_Pawan_Kalyan"></td>
+                        </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
